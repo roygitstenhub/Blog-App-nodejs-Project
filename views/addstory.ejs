@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addstory</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="add-story-container flex align-items col">
+        <h2>Add Story</h2>
+        <form action="/stories" method="POST" class=" flex justify-items align-items col">
+            <div class="row">
+                <div class="input-field flex col ">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter title...">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field flex col">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="public" selected>Public</option>
+                        <option value="private">Private</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field flex col">
+                    <h5>Tell Us Your Story</h5>
+                    <textarea id="body" name="body" placeholder="Type description..." ></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="save" class="save-btn  btn">
+                <a href="/dashboard" class="cancel-btn btn">Cancel here</a>
+            </div>
+        </form>
+    </div>
+
+</html>

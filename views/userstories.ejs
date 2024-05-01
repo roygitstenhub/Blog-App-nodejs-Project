@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>your stroies</title>
+</head>
+<body>
+    <div class=" main-story-wrapper flex col ">
+        <h1 class="main-heading">My stories</h1>
+        <div class="story-container flex  ">
+            <% for (var i in user_stories) { %>
+                <div class="card flex justify-items col ">
+
+                    <div class="card-heading-text">
+                        <h2 class="title">
+                            <%= user_stories[i].title %>
+                        </h2>
+
+                        <p class="desc">
+                            <%= user_stories[i].body %>
+                        </p>
+                    </div>
+
+                    <a href="/stories/user/<%=user_stories[i]._id%>" class="read-more">
+                        read more...
+                    </a>
+
+                    <div class="chip flex justify-between align-items justify-items ">
+                        <img src='<%= user_stories[i].user.image %>' alt="" srcset="">
+                        <a href="/stories/userstories/<%=user_stories[i].user._id%>">
+                            <%= user_stories[i].user.displayName %>
+                        </a>
+                    </div>
+
+                    <a href="/stories/edit/<%=user_stories[i]._id%>" class="story-edit-icon">
+                        <i class="fa-solid fa-pen-to-square fa-pen-to-square2 "></i>
+                    </a>
+                    
+                </div>
+                <% } %>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit story</title>
+</head>
+
+<body>
+    <div class="row add-story-container flex align-items col">
+        <h2 class="main-text ">Edit Story</h2>
+        <form action="/stories/<%=story._id%>" method="POST" class=" flex justify-items align-items col">
+            <input type="hidden" name="_method" value="PUT">
+            <div class="row">
+                <div class="input-field flex col">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" value="<%=story.title%>">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field flex col">
+                    <label for="status">Status</label>
+                    <select id="status" name="status">
+                        <option value="public" selected>Public</option>
+                        <option value="private">Private</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field flex col">
+                    <h5>Tell Us Your Story:</h5>
+                    <textarea id="body" name="body">Add new text </textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Save" class="save-btn btn">
+                <a href="/dashboard" class="btn cancel-btn">Cancel here</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

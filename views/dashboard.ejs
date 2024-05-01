@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header class=" padding flex justify-between align-items ">
+        <div class="logo">
+            <h2 class="login-header">BLOG <i class="fa-solid fa-book-open-reader"></i> BOOK</h2>
+        </div>
+        <nav class="nav-links ">
+            <ul class="flex align-item">
+                <li><a href="/dashboard" class="nav-link">Dashboard</a></li>
+                <li><a href="/stories" class="nav-link">Public stories</a></li>
+                <li><a href="/auth/logout" class=" logout-btn ">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars "></i>
+        </div>
+    </header>
+
+    <main class="main-wrapper flex align-items  ">
+        <h1 class="main-text">welcome <%= locals.name %> </h1>
+        <% if(stories.length> 0){ %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i in stories) { %>
+                        <tr>
+                            <td>
+                                <%= stories[i].title %>
+                            </td>
+                            <td>
+                                <%=stories[i].createdAt %>
+                            </td>
+
+                            <td class=" status flex justify-between ">
+                                <%=stories[i].status %>
+
+                            </td>
+
+                            <td>
+                                <div class=" icons flex justify-between ">
+                                    
+                                    <a href="/stories/edit/<%=stories[i]._id%>" class="edit-btn">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+
+                                    <form action="/stories/<%=stories[i]._id%>" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="trash-btn">
+                                            <i class="fa-solid fa-trash "></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <p>You have not created any story yet</p>
+                <% } %>
+
+                    <a href="/stories/add" class="add-btn">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+
+    </main>
+    <script src="../toogle.js" ></script>
+</body>
+
+</html>

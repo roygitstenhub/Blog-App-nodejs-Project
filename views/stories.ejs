@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>public stories</title>
+</head>
+
+<body>
+    <div class=" main-story-wrapper flex col ">
+        <h1 class="main-heading">stories</h1>
+        <div class="search-container flex justify-items align-items col ">
+            <form action="/stories/search/:query" method="get">
+                <div class="input-group flex">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" name="query" placeholder="search by title..">
+                    <button type="search">search</button>
+                </div>
+            </form>
+        </div>
+        <div class="story-container flex  ">
+            <% for (var i in stories) { %>
+                <div class="card flex justify-items col">
+
+                    <div class="card-heading-text flex col">
+                        <h2 class="title">
+                            <%= stories[i].title %>
+                        </h2>
+
+                        <p class="desc">
+                            <%= stories[i].body %>
+                        </p>
+                    </div>
+
+                    <a href="/stories/user/<%=stories[i]._id%>" class="read-more">
+                        read more...
+                    </a>
+
+                    <div class="chip flex justify-between align-items justify-items ">
+                        <img src='<%= stories[i].user.image %>' alt="" srcset="">
+                        <a href="/stories/userstories/<%=stories[i].user._id%>">
+                            <%= stories[i].user.displayName %>
+                        </a>
+                    </div>
+                    <!-- <a href="/stories/edit/<%=stories[i]._id%>" class="story-edit-icon">
+                        <i class="fa-solid fa-pen-to-square fa-pen-to-square2 "></i>
+                    </a> -->
+                </div>
+                <% } %>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
