@@ -35,7 +35,7 @@ dotenv.config({
   path: "./config/config.env"
 })
 
-const _dirname = path.resolve()
+const __dirname = path.resolve()
 
 initilizingPassport(passport)
 
