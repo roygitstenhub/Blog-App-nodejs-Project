@@ -35,6 +35,8 @@ dotenv.config({
   path: "./config/config.env"
 })
 
+const _dirname = path.resolve()
+
 initilizingPassport(passport)
 
 //@setting up express-session
@@ -55,6 +57,9 @@ database();
 app.use("/", routes)
 app.use("/auth", auth)
 app.use("/stories", stories)
+
+app.use(express.static(path.join(__dirname, '/dist')))
+
 
 const PORT = process.env.PORT || 4000
 
