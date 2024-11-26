@@ -26,29 +26,29 @@ This is a blog application built with **Node.js**, **MongoDB**, **EJS** (Embedde
 - **Version Control**: Git, hosted on GitHub
 
 - ## screenshots
-  Login
+  ## Login
   <img width="682" alt="login" src="https://github.com/user-attachments/assets/cc7d9369-f7ae-4bf2-b1d8-d58ce20406a0">
 
-  Dashboard
+  ## Dashboard
   <img width="956" alt="dashboard" src="https://github.com/user-attachments/assets/7a94cf2f-98cc-483f-a0ed-e8cbe2c87fed">
 
-  Add/Edit blog
+  ## Add/Edit blog
   <img width="839" alt="add-post" src="https://github.com/user-attachments/assets/6cfbf4fc-8ed3-44d3-aab2-f6c8cf8ef8f8">
   <img width="806" alt="update-post" src="https://github.com/user-attachments/assets/b22469ba-b51d-4622-953d-e169655aae14">
 
-  All Blogs
+ ## All Blogs
   <img width="914" alt="blog posts" src="https://github.com/user-attachments/assets/79a91f8f-8078-46db-a263-8adb67e374f3">
 
-  Single user blog
+  ## Single user blog
   <img width="782" alt="single user posts" src="https://github.com/user-attachments/assets/af052f14-07fb-4a4e-82d0-3c03e3bb067f">
 
-  Post details
+  ## Post details
   <img width="581" alt="post details" src="https://github.com/user-attachments/assets/89ff093d-9789-4fcc-89f5-11071623e0b4">
 
-  Search post
+  ## Search post
   <img width="734" alt="search-post" src="https://github.com/user-attachments/assets/6784d1aa-c62b-410d-835b-700de817a929">
 
-  Responsive Design
+  ## Responsive Design
   <img width="221" alt="responsive" src="https://github.com/user-attachments/assets/8692479e-895d-40c0-ac69-2b33c1fd9534">
 
 
